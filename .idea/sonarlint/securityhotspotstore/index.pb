@@ -1,10 +1,4 @@
 
-m
-=app/src/main/java/com/example/cursoaristidevs/MainActivity.kt,7/f/7fca358c45178880bc1777d7a36a2af1270ae75a
-q
-Aapp/src/main/java/com/example/cursoaristidevs/AndroidExercises.kt,5/7/576e10b4215e342a471104c2ac91957fdf1f29fa
-{
-Kapp/src/main/java/com/example/cursoaristidevs/exercises/AndroidExercises.kt,b/1/b190af5875761b653cba0a8611598f36505bfb31
 t
 Dapp/src/main/java/com/example/cursoaristidevs/exercises/Exercise1.kt,f/d/fdd3f99099f865742c1d119a911984cc2011ef1f
 t
@@ -304,3 +298,7 @@ w
 G.idea/sonarlint/issuestore/1/e/1e45613b6060de813dc92caeb118e08a2124bc35,f/e/fecf5323300fbb3035ec31c56ab7923e198f5ae8
 w
 G.idea/sonarlint/issuestore/1/0/1017d171139053a6ceaff055b7159ba14e80dc44,a/3/a35bf1b41b0de7ced0fb00c925df2e11edb44a87
+q
+Aapp/src/main/java/com/example/cursoaristidevs/exercises/Arrays.kt,3/2/32abb5ac0ad30c34741343a9357d255c77f0bd49
+o
+?app/src/main/java/com/example/cursoaristidevs/exercises/List.kt,f/3/f3de63e03613f1f05ecddc4bc250584308c3e3ba
