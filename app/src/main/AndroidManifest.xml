@@ -13,7 +13,10 @@
         android:theme="@style/Theme.CursoAristiDevs"
         tools:targetApi="31">
         <activity
-            android:name=".exercises.firstapp.FirstAppActivity"
+            android:name=".androidmaster.firstapp.ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidmaster.firstapp.FirstAppActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.example.cursoaristidevs.exercises
+package com.example.cursoaristidevs.androidmaster.exercises
 
 /**
  * En el codigo inicial que se proporciona en el siguiente fragmento de codigo,

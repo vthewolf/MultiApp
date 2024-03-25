@@ -1,4 +1,4 @@
-package com.example.cursoaristidevs.exercises
+package com.example.cursoaristidevs.androidmaster.syntaxis
 
 fun main() {
     val weekDays = arrayOf("Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo")
