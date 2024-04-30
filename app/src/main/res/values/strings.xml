@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Curso AristiDevs</string>
+
+    <!--IMC APP-->
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
     <string name="height">Altura</string>
@@ -8,7 +10,9 @@
     <string name="calculate">Calcular</string>
     <string name="recalculate">Recalcular</string>
     <string name="result">Resultado</string>
+
     <string name="error">Error</string>
+
     <string name="title_underweight">Bajo peso</string>
     <string name="description_underweight">Estás por debajo de lo óptimo para tu peso y altura.</string>
     <string name="title_normal_weight">Normal</string>
@@ -18,4 +22,7 @@
     <string name="title_obesity">Obesidad</string>
     <string name="description_obesity">Estás muy por encima de lo óptimo para tu peso y altura.</string>
 
+    <!--TODOAPP-->
+    <string name="todo_title">Bienvenido V.</string>
+    <string name="todo_category">Categorías</string>
 </resources>
