@@ -1,7 +1,7 @@
 package com.example.cursoaristidevs.androidmaster.imccalculator
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +31,11 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private lateinit var btnPlusAge: FloatingActionButton
     private lateinit var btnSubtractAge: FloatingActionButton
     private lateinit var btnCalculate: Button
+
+    companion object{
+        const val IMC_KEY = "IMC_RESULT"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imc_calculator)
@@ -88,15 +93,21 @@ class ImcCalculatorActivity : AppCompatActivity() {
         }
 
         btnCalculate.setOnClickListener {
-            calculateImc()
+            val result = calculateImc()
+            navigateToResult(result)
         }
     }
 
-    private fun calculateImc() {
-        val df = DecimalFormat("#.##")
+    private fun navigateToResult(result: Double) {
+        val intent = Intent(this, ResultImcActivity::class.java)
+        intent.putExtra(IMC_KEY, result)
+        startActivity(intent)
+    }
+
+    private fun calculateImc(): Double {
+        val df = DecimalFormat("#,##")
         val imc = currentWeight / (currentHeight.toDouble() / 100 * currentHeight.toDouble() / 100)
-        val result = df.format(imc)
-        Log.i("tutorial", "el IMC es $result")
+        return df.format(imc).toDouble()
     }
 
     private fun setAge() {
