@@ -27,32 +27,32 @@ class ResultImcActivity : AppCompatActivity() {
 
     private fun initListeners() {
         btnRecalculate.setOnClickListener {
-            onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
         }
     }
 
     private fun initUi(result: Double) {
         tvImc.text = result.toString()
         when (result) {
-            in 0.00..18.50 -> { // Bajo peso
+            in 0.00..18.50 -> {
                 tvResult.text = getString(R.string.title_underweight)
                 tvResult.setTextColor(ContextCompat.getColor(this, R.color.underweight))
                 tvDescription.text = getString(R.string.description_underweight)
             }
 
-            in 18.51..24.99 -> { // Peso normal
+            in 18.51..24.99 -> {
                 tvResult.text = getString(R.string.title_normal_weight)
                 tvResult.setTextColor(ContextCompat.getColor(this, R.color.normal_weight))
                 tvDescription.text = getString(R.string.description_normal_weight)
             }
 
-            in 25.00..29.99 -> { // Alto peso
+            in 25.00..29.99 -> {
                 tvResult.text = getString(R.string.title_overweight)
                 tvResult.setTextColor(ContextCompat.getColor(this, R.color.overweight))
                 tvDescription.text = getString(R.string.description_overweight)
             }
 
-            in 30.00..99.00 -> { // Obesidad
+            in 30.00..99.00 -> {
                 tvResult.text = getString(R.string.title_obesity)
                 tvResult.setTextColor(ContextCompat.getColor(this, R.color.obesity))
                 tvDescription.text = getString(R.string.description_obesity)
