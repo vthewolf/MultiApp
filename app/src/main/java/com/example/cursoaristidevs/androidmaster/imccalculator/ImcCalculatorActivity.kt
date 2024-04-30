@@ -17,7 +17,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private var isMaleSelected: Boolean = true
     private var isFemaleSelected: Boolean = false
     private var currentWeight: Int = 60
-    private var currentAge: Int = 20
+    private var currentAge: Int = 30
     private var currentHeight: Int = 120
 
     private lateinit var viewMale: CardView
