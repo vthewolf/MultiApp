@@ -32,10 +32,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".androidmaster.firstapp.ResultActivity"
+            android:name=".androidmaster.greetingsapp.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".androidmaster.firstapp.FirstAppActivity"
+            android:name=".androidmaster.greetingsapp.FirstAppActivity"
             android:exported="true" />
     </application>
 

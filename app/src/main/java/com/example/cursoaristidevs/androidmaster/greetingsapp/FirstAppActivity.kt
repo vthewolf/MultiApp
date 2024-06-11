@@ -1,15 +1,18 @@
-package com.example.cursoaristidevs.androidmaster.firstapp
+package com.example.cursoaristidevs.androidmaster.greetingsapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import com.example.cursoaristidevs.R
 
 class FirstAppActivity : AppCompatActivity() {
+
+    companion object {
+        const val NAME = "NAME"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first_app)
@@ -22,7 +25,7 @@ class FirstAppActivity : AppCompatActivity() {
 
             if (name.isNotEmpty()){
                 val intent = Intent(this, ResultActivity::class.java)
-                intent.putExtra("EXTRA_NAME", name)
+                intent.putExtra(NAME, name)
                 startActivity(intent)
             }
         }

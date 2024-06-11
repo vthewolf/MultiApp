@@ -32,7 +32,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private lateinit var btnSubtractAge: FloatingActionButton
     private lateinit var btnCalculate: Button
 
-    companion object{
+    companion object {
         const val IMC_KEY = "IMC_RESULT"
     }
 

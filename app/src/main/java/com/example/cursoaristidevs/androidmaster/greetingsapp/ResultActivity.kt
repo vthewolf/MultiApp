@@ -1,12 +1,10 @@
-package com.example.cursoaristidevs.androidmaster.firstapp
+package com.example.cursoaristidevs.androidmaster.greetingsapp
 
 import android.os.Bundle
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.cursoaristidevs.R
+import com.example.cursoaristidevs.androidmaster.greetingsapp.FirstAppActivity.Companion.NAME
 
 class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +12,7 @@ class ResultActivity : AppCompatActivity() {
         setContentView(R.layout.activity_result)
 
         val tvResult = findViewById<TextView>(R.id.tvResult)
-        val name = intent.extras?.getString("EXTRA_NAME").orEmpty()
+        val name = intent.extras?.getString(NAME).orEmpty()
 
         tvResult.text = "Hola $name"
     }

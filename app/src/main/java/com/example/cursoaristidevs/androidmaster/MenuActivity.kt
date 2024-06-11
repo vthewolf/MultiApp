@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cursoaristidevs.R
-import com.example.cursoaristidevs.androidmaster.firstapp.FirstAppActivity
+import com.example.cursoaristidevs.androidmaster.greetingsapp.FirstAppActivity
 import com.example.cursoaristidevs.androidmaster.imccalculator.ImcCalculatorActivity
 import com.example.cursoaristidevs.androidmaster.todoapp.TodoActivity
 
