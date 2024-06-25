@@ -25,4 +25,5 @@
     <!--TODOAPP-->
     <string name="todo_title">Bienvenido V.</string>
     <string name="todo_category">Categorías</string>
+    <string name="todo_tasks">Tareas:</string>
 </resources>
