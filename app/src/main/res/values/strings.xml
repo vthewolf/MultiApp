@@ -26,4 +26,9 @@
     <string name="todo_title">Bienvenido V.</string>
     <string name="todo_category">Categorías</string>
     <string name="todo_tasks">Tareas:</string>
+    <string name="todo_dialog_add_task">Añade la tarea</string>
+    <string name="todo_dialog_category_business">Negocios</string>
+    <string name="todo_dialog_category_personal">Personal</string>
+    <string name="todo_dialog_category_others">Otros</string>
+    <string name="todo_dialog_category_create_task">Crear tarea</string>
 </resources>
