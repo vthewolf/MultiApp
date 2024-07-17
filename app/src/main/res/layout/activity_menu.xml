@@ -19,7 +19,6 @@
         android:id="@+id/btnIMCApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/material_on_background_emphasis_medium"
         android:text="IMC APP" />
 
     <Button
@@ -27,5 +26,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TO DO APP" />
+
+    <Button
+        android:id="@+id/btnSuperHero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SUPER HERO APP" />
 
 </LinearLayout>
