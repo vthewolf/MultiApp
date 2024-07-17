@@ -1,6 +1,8 @@
 package com.example.cursoaristidevs.androidmaster.superheroapp
 
 import android.os.Bundle
+import android.util.TypedValue
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cursoaristidevs.databinding.ActivityDetailSuperheroBinding
 import com.squareup.picasso.Picasso
@@ -9,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlin.math.roundToInt
 
 class DetailSuperheroActivity : AppCompatActivity() {
 
@@ -41,6 +44,38 @@ class DetailSuperheroActivity : AppCompatActivity() {
     private fun createUi(superhero: SuperheroDetailResponse) {
         Picasso.get().load(superhero.image.url).into(binding.imageSuperhero)
         binding.superheroName.text = superhero.name
+        prepareStats(superhero.powerstats)
+        binding.superHeroRealName.text = superhero.biography.fullName
+        binding.publisher.text = superhero.biography.publisher
+        binding.alterEgos.text = superhero.biography.alterEgos
+        binding.placeOfBirth.text = superhero.biography.placeOfBirth
+        binding.firstAppearance.text = superhero.biography.firstAppearance
+        binding.alignment.text = "Alignment: ${superhero.biography.alignment}"
+        binding.gender.text = superhero.appearance.gender
+        binding.race.text = superhero.appearance.race
+        binding.height.text = "Height: ${superhero.appearance.height[1]}"
+        binding.weight.text = "Weight: ${superhero.appearance.weight[1]}"
+        binding.eyeColor.text = "Eye color: ${superhero.appearance.eyeColor}"
+        binding.hairColor.text = "Hair color: ${superhero.appearance.hairColor}"
+    }
+
+    private fun prepareStats(powerstats: PowerStatsResponse) {
+        updateHeigh(binding.viewCombat, powerstats.combat)
+        updateHeigh(binding.viewPower, powerstats.power)
+        updateHeigh(binding.viewSpeed, powerstats.speed)
+        updateHeigh(binding.viewStrength, powerstats.strength)
+        updateHeigh(binding.viewIntelligence, powerstats.intelligence)
+        updateHeigh(binding.viewDurability, powerstats.durability)
+    }
+
+    private fun updateHeigh(view: View, stat: String) {
+        val params = view.layoutParams
+        params.height = pixelToDp(stat.toFloat())
+        view.layoutParams = params
+    }
+
+    private fun pixelToDp(px: Float): Int {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px, resources.displayMetrics).roundToInt()
     }
 
     private fun getRetrofit(): Retrofit {
