@@ -15,23 +15,23 @@
         android:theme="@style/Theme.AndroidMaster"
         tools:targetApi="31">
         <activity
-            android:name=".androidmaster.superheroapp.DetailSuperheroActivity"
+            android:name=".superheroapp.DetailSuperheroActivity"
             android:exported="false" />
         <activity
-            android:name=".androidmaster.superheroapp.SuperHeroListActivity"
+            android:name=".superheroapp.SuperHeroListActivity"
             android:exported="false" />
         <activity
-            android:name=".androidmaster.todoapp.TodoActivity"
+            android:name=".todoapp.TodoActivity"
             android:exported="false"
             android:theme="@style/Theme.TODOApp" />
         <activity
-            android:name=".androidmaster.imccalculator.ResultImcActivity"
+            android:name=".imccalculator.ResultImcActivity"
             android:exported="false" />
         <activity
-            android:name=".androidmaster.imccalculator.ImcCalculatorActivity"
+            android:name=".imccalculator.ImcCalculatorActivity"
             android:exported="false" />
         <activity
-            android:name=".androidmaster.MenuActivity"
+            android:name=".MenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,10 +40,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".androidmaster.greetingsapp.ResultActivity"
+            android:name=".greetingsapp.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".androidmaster.greetingsapp.FirstAppActivity"
+            android:name=".greetingsapp.FirstAppActivity"
             android:exported="true" />
     </application>
 
