@@ -31,4 +31,15 @@
     <string name="todo_dialog_category_personal">Personal</string>
     <string name="todo_dialog_category_others">Otros</string>
     <string name="todo_dialog_category_create_task">Crear tarea</string>
+
+    <!--SUPERHERO APP-->
+    <string name="superhero_alignment">Alignment: %s</string>
+    <string name="superhero_relatives">Relatives: %s</string>
+    <string name="superhero_group_affiliation">Group Affiliation: %s</string>
+    <string name="superhero_base">Base: %s</string>
+    <string name="superhero_occupation">Occupation: %s</string>
+    <string name="superhero_hair_color">Hair color: %s</string>
+    <string name="superhero_eye_color">Eye color: %s</string>
+    <string name="superhero_weight">Weight: %s</string>
+    <string name="superhero_height">Height: %s</string>
 </resources>

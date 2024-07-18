@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.TypedValue
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.multiapp.R
 import com.example.multiapp.databinding.ActivityDetailSuperheroBinding
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
@@ -15,7 +16,7 @@ import kotlin.math.roundToInt
 
 class DetailSuperheroActivity : AppCompatActivity() {
 
-    companion object{
+    companion object {
         const val ID = "ID"
     }
 
@@ -32,38 +33,63 @@ class DetailSuperheroActivity : AppCompatActivity() {
 
     private fun getSuperheroInformation(id: String) {
         CoroutineScope(Dispatchers.IO).launch {
-            val superheroDetail = getRetrofit().create(ApiService::class.java).getSuperheroeDetail(id)
-            if(superheroDetail.body() != null){
+            val superheroDetail =
+                getRetrofit().create(ApiService::class.java).getSuperheroeDetail(id)
+            if (superheroDetail.body() != null) {
                 runOnUiThread {
-                   createUi(superheroDetail.body()!!)
+                    createUi(superheroDetail.body()!!)
                 }
             }
         }
     }
 
-    private fun createUi(superhero: com.example.multiapp.superheroapp.SuperheroDetailResponse) {
+    private fun createUi(superhero: SuperheroDetailResponse) {
         Picasso.get().load(superhero.image.url).into(binding.imageSuperhero)
-        binding.superheroName.text = superhero.name
         prepareStats(superhero.powerstats)
-        binding.superHeroRealName.text = superhero.biography.fullName
-        binding.publisher.text = superhero.biography.publisher
-        binding.alterEgos.text = superhero.biography.alterEgos
-        binding.placeOfBirth.text = superhero.biography.placeOfBirth
-        binding.firstAppearance.text = superhero.biography.firstAppearance
-        binding.alignment.text = "Alignment: ${superhero.biography.alignment}"
-        binding.gender.text = superhero.appearance.gender
-        binding.race.text = superhero.appearance.race
-        binding.height.text = "Height: ${superhero.appearance.height[1]}"
-        binding.weight.text = "Weight: ${superhero.appearance.weight[1]}"
-        binding.eyeColor.text = "Eye color: ${superhero.appearance.eyeColor}"
-        binding.hairColor.text = "Hair color: ${superhero.appearance.hairColor}"
-        binding.occupation.text = "Occupation: ${superhero.work.occupation}"
-        binding.base.text = "Base: ${superhero.work.base}"
-        binding.groupAffiliation.text = "Group Affiliation: ${superhero.connections.groupAffiliation}"
-        binding.relatives.text = "Relatives: ${superhero.connections.relatives}"
+        with(binding) {
+            superheroName.text = superhero.name
+            superHeroRealName.text = superhero.biography.fullName
+            publisher.text = superhero.biography.publisher
+            alterEgos.text = superhero.biography.alterEgos
+            placeOfBirth.text = superhero.biography.placeOfBirth
+            firstAppearance.text = superhero.biography.firstAppearance
+            alignment.text = String.format(
+                getString(R.string.superhero_alignment),
+                superhero.biography.alignment
+            )
+            gender.text = superhero.appearance.gender
+            race.text = superhero.appearance.race
+            height.text =
+                String.format(getString(R.string.superhero_height), superhero.appearance.height[1])
+            weight.text =
+                String.format(getString(R.string.superhero_weight), superhero.appearance.weight[1])
+            eyeColor.text = String.format(
+                getString(R.string.superhero_eye_color),
+                superhero.appearance.eyeColor
+            )
+            hairColor.text = String.format(
+                getString(R.string.superhero_hair_color),
+                superhero.appearance.hairColor
+            )
+            occupation.text =
+                String.format(getString(R.string.superhero_occupation), superhero.work.occupation)
+            base.text = String.format(getString(R.string.superhero_base), superhero.work.base)
+            groupAffiliation.text = String.format(
+                getString(R.string.superhero_group_affiliation),
+                superhero.connections.groupAffiliation
+            )
+            relatives.text = String.format(
+                getString(R.string.superhero_relatives),
+                superhero.connections.relatives
+            )
+            alignment.text = String.format(
+                getString(R.string.superhero_alignment),
+                superhero.biography.alignment
+            )
+        }
     }
 
-    private fun prepareStats(powerstats: com.example.multiapp.superheroapp.PowerStatsResponse) {
+    private fun prepareStats(powerstats: PowerStatsResponse) {
         updateHeigh(binding.viewCombat, powerstats.combat)
         updateHeigh(binding.viewPower, powerstats.power)
         updateHeigh(binding.viewSpeed, powerstats.speed)
@@ -79,7 +105,8 @@ class DetailSuperheroActivity : AppCompatActivity() {
     }
 
     private fun pixelToDp(px: Float): Int {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px, resources.displayMetrics).roundToInt()
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px, resources.displayMetrics)
+            .roundToInt()
     }
 
     private fun getRetrofit(): Retrofit {
