@@ -53,16 +53,20 @@ class DetailSuperheroActivity : AppCompatActivity() {
             alterEgos.text = superhero.biography.alterEgos
             placeOfBirth.text = superhero.biography.placeOfBirth
             firstAppearance.text = superhero.biography.firstAppearance
+            gender.text = superhero.appearance.gender
+            race.text = superhero.appearance.race
             alignment.text = String.format(
                 getString(R.string.superhero_alignment),
                 superhero.biography.alignment
             )
-            gender.text = superhero.appearance.gender
-            race.text = superhero.appearance.race
-            height.text =
-                String.format(getString(R.string.superhero_height), superhero.appearance.height[1])
-            weight.text =
-                String.format(getString(R.string.superhero_weight), superhero.appearance.weight[1])
+            height.text = String.format(
+                getString(R.string.superhero_height),
+                superhero.appearance.height[1]
+            )
+            weight.text = String.format(
+                getString(R.string.superhero_weight),
+                superhero.appearance.weight[1]
+            )
             eyeColor.text = String.format(
                 getString(R.string.superhero_eye_color),
                 superhero.appearance.eyeColor
@@ -71,9 +75,14 @@ class DetailSuperheroActivity : AppCompatActivity() {
                 getString(R.string.superhero_hair_color),
                 superhero.appearance.hairColor
             )
-            occupation.text =
-                String.format(getString(R.string.superhero_occupation), superhero.work.occupation)
-            base.text = String.format(getString(R.string.superhero_base), superhero.work.base)
+            occupation.text = String.format(
+                getString(R.string.superhero_occupation),
+                superhero.work.occupation
+            )
+            base.text = String.format(
+                getString(R.string.superhero_base),
+                superhero.work.base
+            )
             groupAffiliation.text = String.format(
                 getString(R.string.superhero_group_affiliation),
                 superhero.connections.groupAffiliation
@@ -90,12 +99,14 @@ class DetailSuperheroActivity : AppCompatActivity() {
     }
 
     private fun prepareStats(powerstats: PowerStatsResponse) {
-        updateHeigh(binding.viewCombat, powerstats.combat)
-        updateHeigh(binding.viewPower, powerstats.power)
-        updateHeigh(binding.viewSpeed, powerstats.speed)
-        updateHeigh(binding.viewStrength, powerstats.strength)
-        updateHeigh(binding.viewIntelligence, powerstats.intelligence)
-        updateHeigh(binding.viewDurability, powerstats.durability)
+        with(binding) {
+            updateHeigh(viewCombat, powerstats.combat)
+            updateHeigh(viewPower, powerstats.power)
+            updateHeigh(viewSpeed, powerstats.speed)
+            updateHeigh(viewStrength, powerstats.strength)
+            updateHeigh(viewIntelligence, powerstats.intelligence)
+            updateHeigh(viewDurability, powerstats.durability)
+        }
     }
 
     private fun updateHeigh(view: View, stat: String) {
