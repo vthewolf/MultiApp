@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Curso AristiDevs"
+rootProject.name = "Multi App"
 include(":app")
  
