@@ -34,12 +34,10 @@ class SuperHeroListActivity : AppCompatActivity() {
             android.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 searchByName(query.orEmpty())
-
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean = false
-
         })
 
         adapter = SuperheroAdapter{ navigateToDetail(it) }
