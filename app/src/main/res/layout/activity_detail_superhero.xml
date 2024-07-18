@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".androidmaster.superheroapp.DetailSuperheroActivity">
+    tools:context=".superheroapp.DetailSuperheroActivity">
 
     <ImageView
         android:id="@+id/imageSuperhero"
@@ -31,7 +31,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:orientation="vertical">
 
             <TextView
@@ -67,10 +66,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_weight="1"
@@ -114,9 +114,10 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="16dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -149,52 +150,34 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/occupation"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    tools:text="Occupation:" />
 
-                    <TextView
-                        android:id="@+id/occupation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        tools:text="Occupation:" />
-
-                    <TextView
-                        android:id="@+id/base"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        tools:text="Base:" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/base"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    tools:text="Base:" />
 
-                    <TextView
-                        android:id="@+id/groupAffiliation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        tools:text="Group Affiliation:" />
+                <TextView
+                    android:id="@+id/groupAffiliation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Group Affiliation:" />
 
-                    <TextView
-                        android:id="@+id/relatives"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        tools:text="Relatives:" />
-
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/relatives"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Relatives:" />
 
             </LinearLayout>
 
@@ -268,7 +251,7 @@
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Intelligence"
+                    android:text="@string/superhero_intelligence"
                     android:textSize="10sp" />
 
                 <TextView
@@ -277,7 +260,7 @@
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Strength"
+                    android:text="@string/superhero_strength"
                     android:textSize="10sp" />
 
                 <TextView
@@ -286,7 +269,7 @@
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Speed"
+                    android:text="@string/superhero_speed"
                     android:textSize="10sp" />
 
                 <TextView
@@ -295,7 +278,7 @@
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Durability"
+                    android:text="@string/superhero_durability"
                     android:textSize="10sp" />
 
                 <TextView
@@ -304,7 +287,7 @@
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Power"
+                    android:text="@string/superhero_power"
                     android:textSize="10sp" />
 
                 <TextView
@@ -313,7 +296,7 @@
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Combat"
+                    android:text="@string/superhero_combat"
                     android:textSize="10sp" />
 
             </LinearLayout>

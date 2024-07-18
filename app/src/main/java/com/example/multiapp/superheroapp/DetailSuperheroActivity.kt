@@ -59,14 +59,8 @@ class DetailSuperheroActivity : AppCompatActivity() {
                 getString(R.string.superhero_alignment),
                 superhero.biography.alignment
             )
-            height.text = String.format(
-                getString(R.string.superhero_height),
-                superhero.appearance.height[1]
-            )
-            weight.text = String.format(
-                getString(R.string.superhero_weight),
-                superhero.appearance.weight[1]
-            )
+            height.text = superhero.appearance.height[0]
+            weight.text = superhero.appearance.weight[0]
             eyeColor.text = String.format(
                 getString(R.string.superhero_eye_color),
                 superhero.appearance.eyeColor
@@ -83,10 +77,8 @@ class DetailSuperheroActivity : AppCompatActivity() {
                 getString(R.string.superhero_base),
                 superhero.work.base
             )
-            groupAffiliation.text = String.format(
-                getString(R.string.superhero_group_affiliation),
-                superhero.connections.groupAffiliation
-            )
+            groupAffiliation.visibility = View.GONE // Temporal para ajustar el diseño
+
             relatives.text = String.format(
                 getString(R.string.superhero_relatives),
                 superhero.connections.relatives
