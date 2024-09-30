@@ -33,4 +33,10 @@
         android:layout_height="wrap_content"
         android:text="SUPER HERO APP" />
 
+    <Button
+        android:id="@+id/btnSSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SETTINGS APP" />
+
 </LinearLayout>
