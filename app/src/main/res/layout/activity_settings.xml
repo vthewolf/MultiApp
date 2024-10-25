@@ -117,9 +117,11 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.slider.RangeSlider
+                android:id="@+id/range_slider_volume"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="16dp"
+                android:stepSize="1"
+                android:layout_marginEnd="16dp"
                 android:valueFrom="0"
                 android:valueTo="100"/>
 
