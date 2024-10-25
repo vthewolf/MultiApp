@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
@@ -68,6 +69,8 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         binding.darkModeSwitch.setOnCheckedChangeListener { _, value ->
+            if (value) enableDarkMode()
+            else disableDarkMode()
             CoroutineScope(Dispatchers.IO).launch {
                 saveOptions(KEY_DARK_MODE, value)
             }
@@ -101,5 +104,15 @@ class SettingsActivity : AppCompatActivity() {
                 vibration = preferences[booleanPreferencesKey(KEY_VIBRATION)] ?: true
             )
         }
+    }
+
+    private fun enableDarkMode() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        delegate.applyDayNight()
+    }
+
+    private fun disableDarkMode() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        delegate.applyDayNight()
     }
 }
